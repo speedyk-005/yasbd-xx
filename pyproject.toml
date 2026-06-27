@@ -1,0 +1,67 @@
+[project]
+name = "yasbd-xx"
+version = "0.1.0"
+description = "Experimental multilingual aggregate for yasbd-lib — best-effort sentence splitting over all installed language profiles."
+authors = [
+  { name = "speedyk_005", email = "speedy40115719@gmail.com" }
+]
+
+license = "MIT"
+readme = "README.md"
+requires-python = ">=3.11"
+
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Science/Research",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Topic :: Text Processing",
+  "Topic :: Software Development :: Libraries :: Python Modules"
+]
+
+keywords = [
+  "sentence-segmentation", "sentence-boundary-detection", "sbd",
+  "multilingual", "experimental", "aggregate", "language-agnostic", "lang-pack",
+  "text-processing"
+]
+
+dependencies = [
+  "yasbd-lib>=0.8.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.3.5",
+  "pytest-cov>=6.2.1",
+]
+
+[project.urls]
+Homepage = "https://github.com/speedyk-005/yasbd-xx"
+Repository = "https://github.com/speedyk-005/yasbd-xx"
+Issues = "https://github.com/speedyk-005/yasbd-xx/issues"
+
+[build-system]
+requires = [
+    "setuptools>=64",
+    "wheel",
+]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = [
+    "yasbd_xx",
+]
+
+[tool.pytest.ini_options]
+minversion = "7.4"
+addopts = "--cov=yasbd_xx --cov-report=term-missing:skip-covered --durations=5"
+testpaths = ["tests"]
+python_files = "test_*.py"
+
+[tool.coverage.run]
+omit = []
+
